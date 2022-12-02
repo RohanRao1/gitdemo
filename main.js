@@ -18,6 +18,9 @@ function additem(e){
     // get input value
     var newitem = document.getElementById('item').value
 
+    // getting description 
+    var des = document.getElementById('description').value 
+
     //create new li element
     var li = document.createElement('li')
 
@@ -26,6 +29,7 @@ function additem(e){
 
     // add text node with input value
     li.appendChild(document.createTextNode(newitem))
+    li.appendChild(document.createTextNode(des))
     
     //create delete button element
     var deletebtn = document.createElement('button')
@@ -51,3 +55,22 @@ function removeitem(e){
     }
 }
 
+// filter items
+function filteritems(e){
+    // convert to lower case
+    var text = e.target.value.toLowerCase()
+
+    //get li's
+    var items = itemlist.getElementsByTagName('li')
+    // conveet htmlcollection to array
+    Array.from(items).forEach(function(item){
+        var itemname = item.firstChild.textContent
+        var des = item.childNodes[1].textContent
+        if(itemname.toLowerCase().indexOf(text)!=-1 || des.toLowerCase().indexOf(text)!=-1){
+            item.style.display = 'block'
+        } else {
+            item.style.display = 'none'
+        }
+    })
+    
+}
