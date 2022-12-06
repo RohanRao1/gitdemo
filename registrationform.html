@@ -1,0 +1,49 @@
+<!----> <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(''); 
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+
+        form {
+            text-align: center;
+            border: 1px solid orange;
+            background-color: white;
+            margin: 32%;
+            margin-block: auto;
+        }
+    </style>
+</head>
+<body>
+    <!--<form onsubmit="savetolocal(event)">
+        <h3 style="color: red;">Book a call</h3><br>
+        <p>Book a call slot and our representative will call you within 1 hour of selected time</p>
+        <hr width="97%">
+        <label for="name">Name :</label><br>
+        <input type="text" id="name" name="username" style="width:97%;" required ><br>
+        <label for="mail">Email :</label><br>
+        <input type="email" id="mail" name="mail" style="width:97%;" required><br>
+        <label for="phno">Phone :</label><br>
+        <input type="number" id="phno" name="phno" style="width:97%;" ><br>
+        <input type="submit" value="Get a call" style="width:97%; color: white; background-color: orange;">
+    </form> -->
+    <form id="addform">
+        <label for = "name">Name :</label>
+        <input type="text" id = "name" name="username" required>
+        <label for = "mail">Email :</label>
+        <input type="email" id = "mail" name="email" required>
+        <label for = "phno">Phone :</label>
+        <input type="number" id = "phno" name="num">
+        <input type="submit" >
+    </form>
+    <script src="regform.js"></script>
+</body>
+</html> 
