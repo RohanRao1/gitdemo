@@ -35,6 +35,7 @@
         <input type="number" id="phno" name="phno" style="width:97%;" ><br>
         <input type="submit" value="Get a call" style="width:97%; color: white; background-color: orange;">
     </form>
+    <!-- <script src="regform.js"></script>--> 
     <script>
         let myobj = {
             name : 'rohan', 
@@ -44,11 +45,11 @@
         let myobj_serialized = JSON.stringify(myobj)
         //console.log(myobj_serialized)
 
-        localStorage.setItem('myobj',myobj_serialized)
-      // console.log(localStorage)
+        localStorage.setItem('myobj',myobj)
+        console.log(localStorage)
         
         let myobj_deserialized = JSON.parse(localStorage.getItem("myobj"))
         console.log(myobj_deserialized)
-    </script>
+    </script> -->
 </body>
 </html> 
