@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scaling !!</title>
+    </head>
+    <body>
+        <h1>Appointment Booking App</h1>
+        <form onsubmit="savetolocal(event)">
+            <label>Name :</label>
+            <input type="text" id="name" name="username" required>
+            <label>Email :</label>
+            <input type="email" id="mail" name="mail" required>
+            <label>Phone :</label>
+            <input type="number" id="num" name="num">
+            <input type="submit" >
+        </form>
+        <ul id="listofusers"></ul>
+        <script>
+            function savetolocal(event){
+                event.preventDefault()
+                let name = event.target.username.value
+                let email = event.target.mail.value
+                let phone = event.target.num.value
+                
+                const obj ={
+                    name,
+                    email,
+                    phone
+                }
+                localStorage.setItem(obj.email,JSON.stringify(obj))
+                showUserOnScreen(obj)
+            }
+            function showUserOnScreen(user){
+                const parentnode = document.getElementById('listofusers')
+                const child =  `<li> ${user.name} - ${user.email} </li>`
+                parentnode.innerHTML = parentnode.innerHTML + child
+            }
+        </script>
+    </body>
+</html>
+
